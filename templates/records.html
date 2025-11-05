@@ -8,14 +8,21 @@
 
     <section class="recordCardsContainer">
         {% for record in records %}
-        <div class="recordContainer">
+        <div class="recordContainer" id="record-{{ record.id_record }}">
             <h3>{{ record.name_chemical }}</h3>
             <p>{{ record.description }}</p>
-            <img src="{{ record.qr_link }}"> <!-- Colocar ruta de QR -->
+            <img src="../static/img/QR_Codes/qr_{{record.id_record}}.png"> <!-- Colocar ruta de QR -->
             <ul>
-                <li>Formule: {{ record.formule}}</li>
-                <li>Date: {{ record.date_record}}</li>
+                <li>Formule: {{ record.formule }}</li>
+                <li>Date: {{ record.date_record }}</li>
             </ul>
+
+            <form method="post" action="/">
+                <input type="hidden" value="{{ record.id_record }}" name="action_idRecord">
+
+                <input type="submit" value="Delete" name="action">
+                <input type="submit" value="Edit" name="action">
+            </form>
         </div>
         {% endfor %}
         

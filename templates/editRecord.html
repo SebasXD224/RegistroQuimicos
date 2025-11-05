@@ -1,0 +1,13 @@
+{%extends 'master.html' %}
+{%block title%}Edit Record{% endblock %}
+
+{% block content %}
+    <form method="post" action="{{ url_for('edit_record', id_record=id_record) }}">
+        <input type="text" placeholder="Chemical Name" name="chemical_name">
+        <input type="text" placeholder="Chemical Formula" name="chemical_formula">
+        <input type="text" placeholder="Description" name="chemical_description">
+
+        <input type="submit" value="Edit" name="action">
+        <a href="{{ url_for('records') }}">Cancelar</a>
+    </form>
+{% endblock %}

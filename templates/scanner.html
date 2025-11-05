@@ -3,5 +3,12 @@
 {% block title %}Scanner{% endblock %}
 
 {% block content %}
-    <h1>Scanner</h1>
+    <h2>Scanner</h2>
+    <video id="video" autoplay></video>
+    <div id="result">Escaneando...</div>
+
+    <!-- Librería jsQR desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+    <script src="{{ url_for('static', filename='js/qrScanner.js') }}"></script>
+
 {% endblock %}

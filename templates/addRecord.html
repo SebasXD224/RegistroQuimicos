@@ -5,7 +5,11 @@
 {% block content %}
     <h2>Add Record</h2>
 
-    <form>
-        
+    <form method="post" action="/addRecord">
+        <input placeholder="Chemical Name" type="text" name="chemical_name" required>
+        <input placeholder="Chemical Formula" type="text" name="chemical_formula" required>
+        <input placeholder="Description" type="text" rows="4" cols="50" name="chemical_description" required>
+
+        <input type="submit" value="Send" name="action">
     </form>
 {% endblock %}
