@@ -7,16 +7,18 @@
     <h2>Records</h2>
 
     <section class="recordCardsContainer">
+        {% for record in records %}
         <div class="recordContainer">
-            <h3>Titulo quimico</h3>
-            <img src="#"> <!-- Colocar ruta de QR -->
+            <h3>{{ record.name_chemical }}</h3>
+            <p>{{ record.description }}</p>
+            <img src="{{ record.qr_link }}"> <!-- Colocar ruta de QR -->
             <ul>
-                <li>Name Chemical: {{ records[0]}}</li>
-                <li>Formule: </li>
-                <li>Description: </li>
-                <li>Date: </li>
+                <li>Formule: {{ record.formule}}</li>
+                <li>Date: {{ record.date_record}}</li>
             </ul>
         </div>
+        {% endfor %}
+        
 
     </section>
     
