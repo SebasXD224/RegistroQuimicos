@@ -1,13 +1,48 @@
 {%extends 'master.html' %}
 {%block title%}Edit Record{% endblock %}
+{% block css_base %}<link rel="stylesheet" href="{{url_for('static',filename='css/editRecord.css')}}">{% endblock %}
+
 
 {% block content %}
-    <form method="post" action="{{ url_for('edit_record', id_record=id_record) }}">
-        <input type="text" placeholder="Chemical Name" name="chemical_name">
-        <input type="text" placeholder="Chemical Formula" name="chemical_formula">
-        <input type="text" placeholder="Description" name="chemical_description">
+    <main class="mainEdit">
+    <div class="editRecordCard"> 
+        
+        <div class="card-header-edit">
+            <h2>Edit Record</h2>
+        </div>
 
-        <input type="submit" value="Edit" name="action">
-        <a href="{{ url_for('records') }}">Cancelar</a>
-    </form>
+        <form method="post" action="{{ url_for('edit_record', id_record=id_record) }}" class="edit-record-form">
+            
+            <div class="form-group">
+                <input type="text" 
+                       placeholder="Chemical Name" 
+                       name="chemical_name" 
+                       value="{{ record.name_chemical if record else '' }}" 
+                       required>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" 
+                       placeholder="Chemical Formula" 
+                       name="chemical_formula" 
+                       value="{{ record.formule if record else '' }}" 
+                       required>
+            </div>
+            
+            <div class="form-group">
+                <textarea placeholder="Description" 
+                          name="chemical_description" 
+                          rows="4" 
+                          required>{{ record.description if record else '' }}</textarea>
+            </div>
+
+            <div class="action-buttons-group">
+                <input type="submit" value="Save Changes" name="action" class="submit-button">
+                
+                <a href="{{ url_for('records') }}" class="cancel-button">Cancel</a>
+            </div>
+        </form>
+    </div>
+</main>
+    
 {% endblock %}

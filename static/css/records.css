@@ -1,0 +1,203 @@
+.mainRecords {
+    width: 100%;
+}
+.title {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 70px;
+}
+.mainRecords {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CARD CONTAINER */
+
+/* --- Estilos Generales del Contenedor --- */
+.recordContainer {
+    /* Color de fondo principal: un rojo brillante/coral */
+    background-color: #FA6B6B; 
+    border-radius: 15px; /* Esquinas redondeadas */
+    border: 4px solid #980000;
+    width: 400px; /* Ancho fijo para simular la tarjeta */
+    height: auto;
+    padding: 10px 15px; /* Espaciado interno general */
+    margin: 20px;
+    color: white; /* Color de texto predeterminado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    position: relative; /* Necesario para posicionar la flecha */
+    font-family: sans-serif; /* Fuente clara y legible */
+}
+
+/* --- Estilos del Header (Título y Menú) --- */
+.record-header {
+    /* Contenedor del título y el icono. Usa Flexbox para alinearlos */
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    align-items: center;
+    /* Fondo para el área del título (un rojo más oscuro) */
+    background-color: #980000; 
+    /* Extender el color de fondo del header a las esquinas superiores */
+    margin: -10px -15px 10px -15px; 
+    padding: 10px 15px;
+    /* Redondear solo las esquinas superiores */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.record-header h3 {
+    margin: 0;
+    font-size: 1.5em; 
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* --- Estilos del Icono de Menú (Font Awesome) --- */
+.menu-icon i {
+    /* Color del ícono de Font Awesome (fa-solid fa-grip) */
+    color: white;
+    font-size: 1.2em; /* Asegurar un buen tamaño para el ícono */
+}
+
+/* --- Estilos de la Descripción --- */
+.record-description {
+    margin: 0 0 15px 0;
+    font-size: 0.9em;
+    font-style: italic;
+    font-weight: light;
+    opacity: 0.9;
+    font-family: 'Poppins';
+}
+
+/* --- Contenido Principal (QR y Datos) --- */
+.record-main-content {
+    display: flex; /* Usamos Flexbox para alinear QR y Datos lado a lado */
+    align-items: flex-start; /* Alinear arriba */
+    gap: 15px;
+}
+
+.qr-container {
+    padding: 8px;
+    background-color: #FF2222; /* Fondo blanco para el QR */
+    border-radius: 10px;
+}
+
+.qr-container img {
+    /* Ajustar el tamaño del QR */
+    width: 120px; 
+    height: 120px;
+    display: block;
+    border-radius: 10px;
+}
+
+/* --- Estilos de los Datos --- */
+.record-data {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins';
+    font-weight: 100;
+    justify-content: space-around; /* Distribuir el espacio vertical */
+    height: 120px; /* Misma altura que el QR para la alineación */
+    flex-grow: 1; 
+}
+
+.record-data-item {
+    font-size: 1.1em;
+    font-weight: 100; /* Datos en negrita */
+    line-height: 1.2;
+}
+
+.data-label {
+    /* Color oscuro para la etiqueta ("Fórmula:", "Fecha:", "ID:") */
+    color: #ffffff; 
+    font-weight: bold; 
+}
+
+/* Estilo para el dato que parece un enlace */
+.record-link {
+    color: #3895D3; /* Color de enlace */
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* --- Flecha Inferior --- */
+.record-footer-arrow {
+    position: absolute;
+    bottom: -15px; /* Mover hacia abajo fuera de la tarjeta */
+    left: 50%;
+    transform: translateX(-50%); /* Centrar */
+    width: 0;
+    height: 0;
+    /* Crear la forma triangular con bordes */
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #E24F4F; /* Color de la flecha (similar al header) */
+}
+
+/* --- Estilos de los Botones (Opcionales/Ocultos) --- */
+.record-actions {
+    margin-top: 15px;
+    text-align: right;
+}
+
+/* Estilo base para todos los botones de acción */
+.action-button {
+    padding: 10px 20px;       /* Espacio interno */
+    font-size: 16px;           /* Tamaño de letra */
+    border: none;              /* Sin borde por defecto */
+    border-radius: 8px;        /* Bordes redondeados */
+    cursor: pointer;           /* Mano al pasar el mouse */
+    color: #fff;               /* Color del texto */
+    transition: all 0.3s ease; /* Animación suave al hover */
+    margin-right: 10px;        /* Separación entre botones */
+}
+
+/* Botón Delete (rojo) */
+.delete-button {
+    background-color: #e74c3c;   /* Rojo */
+}
+
+.delete-button:hover {
+    background-color: #c0392b;   /* Rojo oscuro al pasar el mouse */
+    transform: scale(1.05);      /* Pequeño efecto de zoom */
+}
+
+/* Botón Edit (azul) */
+.edit-button {
+    background-color: #3498db;   /* Azul */
+}
+
+.edit-button:hover {
+    background-color: #2980b9;   /* Azul más oscuro al hover */
+    transform: scale(1.05);
+}
+
+.download-button {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 10px 20px;            /* Espacio interno */
+    background-color: #FF2222;      /* Azul principal */
+    color: #fff;                    /* Texto blanco */
+    font-weight: bold;
+    text-decoration: none;          /* Quitar subrayado */
+    border-radius: 8px;             /* Bordes redondeados */
+    border: 2px solid #FF4D4D;     /* Borde del mismo tono azul oscuro */
+    transition: all 0.3s ease;      /* Transiciones suaves */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra ligera */
+    font-size: 16px;
+}
+
+.download-button:hover {
+    background-color: #FF4D4D ;      /* Azul más oscuro al pasar el mouse */
+    border-color: #FF2222;          /* Borde más intenso */
+    transform: scale(1.05);         /* Pequeño zoom */
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15); /* Sombra más visible */
+}
+
+.download-button:active {
+    transform: scale(0.98);         /* Efecto al hacer clic */
+}
+

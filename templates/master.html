@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/global.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='icons/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/fonts.css')}}">
+
     <title>{% block title %}{% endblock%}</title>
+    {% block css_base %}{% endblock %}
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('records')}}">Records</a></li>
-            <li><a href="{{ url_for('scanner')}}">Scanner</a></li>
-            <li><a href="{{ url_for('addRecord')}}">Add Record</a></li>
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="nav-item nav-records {% if request.path == url_for('records') %}active{% endif %}"><a href="{{ url_for('records')}}"><i class="fa-solid fa-eye"></i></a></li>
+            <li class="nav-item nav-scanner {% if request.path == url_for('scanner') %}active{% endif %}"><a href="{{ url_for('scanner')}}"><i class="fa-solid fa-qrcode"></i></a></li>
+            <li class="nav-item nav-addRecord {% if request.path == url_for('addRecord') %}active{% endif %}"><a href="{{ url_for('addRecord')}}"><i class="fa-solid fa-square-plus"></i></a></li>
         </ul>
     </nav>
 
-    {% block content %}
+    <main>
+        {% block content %}
 
-    {% endblock %}
+        {% endblock %}
+    </main>
+    
 </body>
 </html>

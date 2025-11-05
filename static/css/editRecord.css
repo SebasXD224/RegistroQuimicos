@@ -1,0 +1,123 @@
+/* ========================================= */
+/* === ESTILOS ESPECÍFICOS FORMULARIO EDITAR === */
+/* ========================================= */
+
+.mainEdit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+/* --- Estilos de la Tarjeta del Formulario (Contenedor) --- */
+.editRecordCard {
+    /* Mismo color principal que la tarjeta anterior */
+    background-color: #FA6B6B; 
+    border-radius: 15px; 
+    width: 400px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+    color: white;
+}
+
+/* --- Estilos del Encabezado del Formulario --- */
+.card-header-edit {
+    /* Mismo color oscuro que el header de la tarjeta de registro */
+    background-color: #E24F4F; 
+    padding: 15px 20px;
+    /* Redondear solo las esquinas superiores */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-header-edit h2 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+/* --- Estilos de la Forma y Campos de Entrada Comunes --- */
+.edit-record-form {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.edit-record-form input[type="text"],
+.edit-record-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px; 
+    border: none;
+    font-size: 1em;
+    box-sizing: border-box; 
+    color: #333;
+    /* Mismo fondo blanco que el QR de la tarjeta */
+    background-color: #FFFFFF; 
+    transition: all 0.3s ease;
+}
+
+.edit-record-form textarea {
+    resize: vertical; /* Permitir redimensionar solo verticalmente */
+    min-height: 100px;
+}
+
+.edit-record-form input[type="text"]:focus,
+.edit-record-form textarea:focus {
+    outline: none;
+    /* Efecto de foco: un borde blanco suave */
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5); 
+}
+
+/* --- Estilos para la Organización de Botones --- */
+.action-buttons-group {
+    display: flex;
+    justify-content: space-between; 
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* --- Estilos del Botón de Guardar (Submit) --- */
+.submit-button {
+    width: 60%; /* Ocupa la mayor parte del espacio */
+    background-color: #E24F4F; /* Color oscuro para el botón principal */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #C04242; /* Un tono ligeramente más oscuro al pasar el ratón */
+}
+
+/* --- Estilos para el Botón/Enlace de Cancelar --- */
+.cancel-button {
+    display: block; 
+    width: 40%; /* Ocupa el espacio restante */
+    text-align: center;
+    text-decoration: none; 
+    
+    background-color: transparent; 
+    color: white; 
+    border: 2px solid white; /* Borde blanco para destacarlo */
+    
+    padding: 13px 0; /* Ajustamos el padding para alinearlo verticalmente con submit-button */
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancel-button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: #E24F4F;
+    color: #E24F4F;
+}

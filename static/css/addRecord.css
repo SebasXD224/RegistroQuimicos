@@ -1,0 +1,92 @@
+/* --- Estilos del Contenedor Principal del Formulario --- */
+.mainAddRecord {
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+/* --- Estilos de la Tarjeta del Formulario (Contenedor) --- */
+.addRecordCard {
+    /* Mismo color principal que la tarjeta anterior */
+    background-color: #FA6B6B; 
+    border-radius: 15px; 
+    width: 400px; /* Un poco más ancho que la tarjeta de registro */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+    color: white;
+}
+
+/* --- Estilos del Encabezado del Formulario --- */
+.card-header-add {
+    /* Mismo color oscuro que el header de la tarjeta de registro */
+    background-color: #E24F4F; 
+    padding: 15px 20px;
+    /* Redondear solo las esquinas superiores */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-header-add h2 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+/* --- Estilos de la Forma y Campos de Entrada --- */
+.record-form {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.record-form input[type="text"],
+.record-form textarea {
+    width: 100%;
+    padding: 12px;
+    /* Esquinas ligeramente redondeadas */
+    border-radius: 8px; 
+    border: none;
+    font-size: 1em;
+    box-sizing: border-box; /* Asegura que el padding no cambie el ancho */
+    color: #333;
+    /* Mismo fondo blanco que el QR de la tarjeta anterior */
+    background-color: #FFFFFF; 
+    /* Transición suave para el foco */
+    transition: all 0.3s ease;
+}
+
+.record-form textarea {
+    resize: vertical; /* Permitir redimensionar solo verticalmente */
+    min-height: 100px;
+}
+
+.record-form input[type="text"]:focus,
+.record-form textarea:focus {
+    outline: none;
+    /* Efecto de foco: un borde delgado con el color principal */
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5); 
+}
+
+/* --- Estilos del Botón de Enviar --- */
+.submit-button {
+    width: 100%;
+    background-color: #E24F4F; /* Usar el color oscuro para el botón principal */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    /* Un tono ligeramente más oscuro al pasar el ratón */
+    background-color: #C04242; 
+}

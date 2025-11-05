@@ -2,14 +2,34 @@
 
 {% block title %}Add Record{% endblock %}
 
+{% block css_base %}<link rel="stylesheet" href="{{url_for('static',filename='css/addRecord.css')}}">{% endblock %}
+
 {% block content %}
-    <h2>Add Record</h2>
+    <main class="mainAddRecord">
+    <div class="addRecordCard">
+        
+        <div class="card-header-add">
+            <h2>Add Record</h2>
+        </div>
 
-    <form method="post" action="/addRecord">
-        <input placeholder="Chemical Name" type="text" name="chemical_name" required>
-        <input placeholder="Chemical Formula" type="text" name="chemical_formula" required>
-        <input placeholder="Description" type="text" rows="4" cols="50" name="chemical_description" required>
+        <form method="post" action="/addRecord" class="record-form">
+            
+            <div class="form-group">
+                <input placeholder="Chemical Name" type="text" name="chemical_name" required>
+            </div>
+            
+            <div class="form-group">
+                <input placeholder="Chemical Formula" type="text" name="chemical_formula" required>
+            </div>
+            
+            <div class="form-group">
+                <textarea placeholder="Description" name="chemical_description" rows="4" required></textarea>
+            </div>
 
-        <input type="submit" value="Send" name="action">
-    </form>
+            <input type="submit" value="Add Record" name="action" class="submit-button">
+            
+        </form>
+    </div>
+</main>
+    
 {% endblock %}

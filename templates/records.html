@@ -2,31 +2,53 @@
 
 {% block title %}Records{% endblock %}
 
+{% block css_base %}<link rel="stylesheet" href="{{url_for('static',filename='css/records.css')}}">{% endblock %}
+
 {% block content %}
+    <section class="mainRecords">
 
-    <h2>Records</h2>
+        <h2 class="title">Records</h2>
 
-    <section class="recordCardsContainer">
-        {% for record in records %}
-        <div class="recordContainer" id="record-{{ record.id_record }}">
-            <h3>{{ record.name_chemical }}</h3>
-            <p>{{ record.description }}</p>
-            <img src="../static/img/QR_Codes/qr_{{record.id_record}}.png"> <!-- Colocar ruta de QR -->
-            <ul>
-                <li>Formule: {{ record.formule }}</li>
-                <li>Date: {{ record.date_record }}</li>
-            </ul>
+        <section class="recordCardsContainer">
+            {% for record in records %}
+            <div class="recordContainer" id="record-{{ record.id_record }}">
+                <div class="record-header">
+                    <h3>{{ record.name_chemical }}</h3>
+                </div>
+                <p class="record-description">{{ record.description }}</p>
 
-            <form method="post" action="/">
-                <input type="hidden" value="{{ record.id_record }}" name="action_idRecord">
+                <div class="record-main-content">
+                    
+                    <div class="qr-container">
+                        <img src="../static/img/QR_Codes/qr_{{record.id_record}}.png" alt="QR Code for {{ record.name_chemical }}">
+                        <a href="../static/img/QR_Codes/qr_{{record.id_record}}.png" download class="download-button">Descargar</a>
+                    </div>
 
-                <input type="submit" value="Delete" name="action">
-                <input type="submit" value="Edit" name="action">
-            </form>
-        </div>
-        {% endfor %}
-        
+                    <div class="record-data">
+                        <div class="record-data-item">
+                            <span class="data-label">Fórmula:</span> {{ record.formule }}
+                        </div>
+                        <div class="record-data-item">
+                            <span class="data-label">Fecha:</span> {{ record.date_record }}
+                        </div>
+                        <div class="record-data-item">
+                            <span class="data-label">ID:</span> {{ record.id_record }}
+                        </div>
+                    </div>
+                </div>
 
+                <form method="post" action="/" class="record-actions">
+                    <input type="hidden" value="{{ record.id_record }}" name="action_idRecord">
+
+                    <input type="submit" value="Delete" name="action" class="action-button delete-button">
+                    <input type="submit" value="Edit" name="action" class="action-button edit-button">
+                </form>
+                
+            </div>
+            {% endfor %}
+            
+
+        </section>
     </section>
     
 {% endblock %}

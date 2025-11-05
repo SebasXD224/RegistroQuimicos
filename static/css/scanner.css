@@ -1,0 +1,24 @@
+.mainScanner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+}
+.camera {
+    width: 90%;
+    height: 80vh;
+    object-fit: cover;  /* 'cover' recorta el video para llenar todo el contenedor */
+    border: 5px solid #980000;
+    border-radius: 20px;
+}
+.titulo {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 70px;
+}
+
+#result {
+    font-family: 'Montserrat';
+    margin-top: 12px;
+}

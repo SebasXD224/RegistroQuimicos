@@ -1,11 +1,14 @@
 {% extends 'master.html'%}
 
 {% block title %}Scanner{% endblock %}
+{% block css_base %}<link rel="stylesheet" href="{{url_for('static',filename='css/scanner.css')}}">{% endblock %}
 
 {% block content %}
-    <h2>Scanner</h2>
-    <video id="video" autoplay></video>
-    <div id="result">Escaneando...</div>
+    <main class="mainScanner">
+        <h2 class="titulo">Scanner</h2>
+        <video id="video" autoplay class="camera"></video>
+        <div id="result">Escaneando...</div>
+    </main>
 
     <!-- Librería jsQR desde CDN -->
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
