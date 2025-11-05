@@ -94,14 +94,18 @@ def addRecord():
     return render_template("addRecord.html")
 
 
-@app.route("/scanner", methods=["POST"])
-def scanner():
-    if request.method == "POST":
-        data = request.get_json()
-        qr_text = data.get("qr_text")
-        print(qr_text)
-        return redirect(qr_text)
+@app.route("/process_qr", methods=["POST"])
+def process_qr():
+    data = request.get_json()
+    qr_text = data.get("qr_text")
+    print("QR detectado:", qr_text)
 
+    # Puedes devolver JSON con la URL a la que quieres redirigir
+    return jsonify({"success": True, "redirect_url": f"{qr_text}"})
+
+
+@app.route("/scanner")
+def scanner():
     return render_template("scanner.html")
 
 

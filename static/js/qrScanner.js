@@ -27,23 +27,20 @@ function tick() {
       result.textContent = "✅ Código detectado: " + qrText;
 
       // Enviar el valor escaneado al servidor Flask
-      fetch("/scanner", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ qr_text: qrText })
+      fetch("/process_qr", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ qr_text: qrText })
       })
       .then(res => res.json())
       .then(data => {
-        if (data.success) {
-          result.textContent = "Redirigiendo...";
-          window.location.href = data.redirect_url;
-        } else {
-          result.textContent = "⚠️ " + data.message;
-        }
+          if (data.success) {
+              window.location.href = data.redirect_url;
+          } else {
+              alert("Registro no encontrado");
+          }
       })
-      .catch(err => {
-        result.textContent = "❌ Error de conexión: " + err.message;
-      });
+      .catch(err => console.error(err));
 
       return; // detener escaneo
     }
