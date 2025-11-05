@@ -7,7 +7,7 @@ QR_FOLDER = os.path.join("static", "img", "QR_Codes")
 
 def generate_qr(record_id):
     # Aquí usa tu dominio o localhost
-    base_url = "http://localhost:5000/"
+    base_url = "https://registroquimicos.onrender.com/"
     qr_data = f"{base_url}#record-{record_id}"
 
     qr = qrcode.QRCode(
