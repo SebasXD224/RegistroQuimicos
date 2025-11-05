@@ -1,0 +1,23 @@
+{% extends 'master.html'%}
+
+{% block title %}Records{% endblock %}
+
+{% block content %}
+
+    <h2>Records</h2>
+
+    <section class="recordCardsContainer">
+        <div class="recordContainer">
+            <h3>Titulo quimico</h3>
+            <img src="#"> <!-- Colocar ruta de QR -->
+            <ul>
+                <li>Name Chemical: {{ records[0]}}</li>
+                <li>Formule: </li>
+                <li>Description: </li>
+                <li>Date: </li>
+            </ul>
+        </div>
+
+    </section>
+    
+{% endblock %}
