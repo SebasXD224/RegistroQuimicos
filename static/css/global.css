@@ -52,5 +52,5 @@ body {
 main {
     margin-top: 100px;
     margin-left: 80px; /* espacio igual al ancho del nav */
-    width: calc(100% - 80px); /* evita overflow horizontal */
+    width: 100% /* evita overflow horizontal */
 }

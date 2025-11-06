@@ -73,7 +73,7 @@
 
 /* --- Estilos del Botón de Enviar --- */
 .submit-button {
-    width: 100%;
+    width: 90%;
     background-color: #E24F4F; /* Usar el color oscuro para el botón principal */
     color: white;
     padding: 15px;

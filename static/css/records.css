@@ -188,7 +188,7 @@
     transition: all 0.3s ease;      /* Transiciones suaves */
     box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra ligera */
     font-size: 16px;
-}
+} 
 
 .download-button:hover {
     background-color: #FF4D4D ;      /* Azul más oscuro al pasar el mouse */
